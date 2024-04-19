@@ -3,8 +3,13 @@
 USERID=$(id -u) #means userid is variable of id -u, id -u to know the user status
 
 VALIDATE(){
-    echo "Exit status: $1"
-    echo "Exit status: $2"
+    if [ $i -ne 0 ] 
+    then
+        echo "$2 is failure"
+        exit 1
+        else
+        echo "$2 is success"
+    fi    
 }
 
 if [ $USERID -ne 0 ] #expression or condition to get the results
