@@ -11,5 +11,5 @@ fi
 
 for i $0
 do 
-echo "package install $1"
+echo "package install $i"
 done
