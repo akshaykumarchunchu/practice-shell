@@ -7,6 +7,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log #---> to know where the tmp data is sav
 
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0"
 
 echo "Script started executing at: $TIMESTAMP"
