@@ -17,7 +17,7 @@ then
     echo -e "$2 ---  $R failure $N"   #$2 means variable 1 that is in "dnf install" "Install mysql"
     exit 1
 else
-	echo "$2 --- $G Success $N"
+	echo -e "$2 --- $G Success $N"
 fi
 }
 
