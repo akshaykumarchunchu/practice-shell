@@ -34,7 +34,7 @@ VALIDATE $? "Installation of Mysql-server is success"
 systemctl enable mysqld &>>$LOGFILE
 VALIDATE $? "Enabling mysql server"
 
-Systemctl start mysqld &>>$LOGFILE
+systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "Starting Mysql server"
 
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
