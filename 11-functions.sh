@@ -2,8 +2,7 @@
 
 USERID=$(id -u) #to know the user id number to install on root user
 TIME_STAMP=$(date +%F-%H-%M-%S) #to know the date,time,month,hours,secs of creating the logfile
-SCRIPT_NAME=$(echo $0 | cut -d "." -f) #--> To cut the last name of script name after . and take 
-first name
+SCRIPT_NAME=$(echo $0 | cut -d "." -f) #--> To cut the last name of script name after . and take first name
 LOGFILE=/tmp/$SCRIPT_NAME-$TIME_STAMP/log #---> to know where the tmp data is saved 
 
 VALIDATE(){  #function syntax
