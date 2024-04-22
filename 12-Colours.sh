@@ -34,3 +34,6 @@ VALIDATE $? "Install mysql"
 
 dnf install git -y &>>$LOGFILE
 VALIDATE $? "install git"
+
+dnf install dockerr -y &>>$LOGFILE
+VALIDATE $? "install docker"
