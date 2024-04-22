@@ -32,5 +32,8 @@ then
     echo "$i already installed...Skipping"
 else
     echo "$i not installed..Need to instal"
+else 
+    dnf install $i -y &>>LOGFILE
+    VAlIDATE $? "installations of $i"
 fi     
 done
