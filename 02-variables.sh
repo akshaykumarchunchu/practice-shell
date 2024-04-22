@@ -1,9 +1,13 @@
 #!/bin/bash
 
-echo "process id of the current shell script: $$"
-echo "number of variables we passed: $#"
-echo "script name: $0"
-echo "present working directory: $PWD"
-echo "home directory of current directory: $HOME"
+#$PERSON1=Ramesh
+#$PERSON2=Suresh
+
+echo "Ramesh how are you, Im Fine how are you Suresh"
+echo "Ramesh im doing good, How is your life going Suresh"
+echo "Ramesh i'm thinking is learn Devops, Suresh of it's very nice"
+
+
+
 
 
