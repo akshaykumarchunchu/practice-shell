@@ -3,7 +3,7 @@
 USERID=$(id -u)
 TEMPSTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOGNAME=/tmp/$SCRIPT_NAME-TEMPSTAMP.log
+LOGFILE=/tmp/$SCRIPT_NAME-TEMPSTAMP.log
 
 R="\e[31m"
 G="\e[32m"
