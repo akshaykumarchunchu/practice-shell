@@ -1,5 +1,15 @@
 #!/bin/bash
 
+
+set -e
+
+function_error(){
+	echo "Error occured at line number: $1, Error command: $2"
+}
+
+trap 'function_error ${LINENO} "$BASH_COMMAND"' ERR
+
+
 USERID=$(id -u)                             #to know the user id number to install on root user
 TIMESTAMP=$(date +%F-%H-%M-%S)              #to know the date,time,month,hours,secs of creating the logfile
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)     #--> To cut the last name of script name after . and take first name
