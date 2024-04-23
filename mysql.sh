@@ -10,6 +10,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0"
 
+
 VALIDATE(){                                 #function syntax
 if [ $1 -ne 0 ]                             #$1 means variable 1 that is in "dnf install" VALIDATE $? Arguments
 then 	
@@ -41,7 +42,7 @@ VALIDATE $? "Starting Mysql server"
 #VALIDATE $? "Setting up root password"
 
 #below code will be useful for idemoptent nature 
-mysql -h akshaydaws-78s.online -uroot -pExpenseApp@1 -e 'show databases;' &>>$LOGFILE
+mysql -h databse.akshaydaws-78s.online -uroot -pExpenseApp@1 -e 'show databases;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
