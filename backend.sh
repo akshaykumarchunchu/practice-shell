@@ -80,7 +80,7 @@ VALIDATE $? "Installing mysql services"
 mysql -h database.akshaydaws-78s.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $? "Schema Loading"
 
-Systemctl restart backend &>>$LOGFILE
+systemctl restart backend &>>$LOGFILE
 VALIDATE $? "Restarting Backend"
 
 
