@@ -9,6 +9,8 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+echo "Please enter DB Password"
+read -s mysql_root_password
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -53,9 +55,31 @@ curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expen
 VALIDATE $? "Downloading the code"
 
 cd /app
-unzip /tmp/backend.zip
+unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "Extract the zip file"
 
-npm install
+npm install &>>$LOGFILE
 VALIDATE $? "Install nodejs dependencies"
+
+cp /home/ec2-user/practice-shell/backend-Service /ect/systemd/system/backend-Service &>>$LOGFILE
+VALIDATE $? "Copy backend-services"
+
+systemctl daemon-reload &>>$LOGFILE
+VALIDATE $? "Daemon-reload"
+
+systemctl start backend &>>$LOGFILE
+VALIDATE $? "Start backend-services"
+
+systemctl enable backend &>>$LOGFILE
+VALIDATE $? "Enabling backend-services"
+
+dnf install mysql -y &>>$LOGFILE
+VALIDATE $? "Installing mysql services"
+
+mysql -h database.akshaydaws-78s.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
+VALIDATE $? "Schema Loading"
+
+Systemctl restart backend &>>$LOGFILE
+VALIDATE $? "Restarting Backend"
+
 
