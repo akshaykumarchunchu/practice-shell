@@ -30,13 +30,13 @@ else
     echo "You're a super user"
 fi
 
-dnf module disable nodejs -y &>>LOGFILE
+dnf module disable nodejs -y &>>$LOGFILE
 VALIDATE $? "disabling default nodejs"
 
-dnf module enable nodejs:20 -y &>>LOGFILE
+dnf module enable nodejs:20 -y &>>$LOGFILE
 VALIDATE $? "Enabling nodejs:20 version"
 
-dnf install nodejs -y &>>LOGFILE
+dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installating nodejs"
 
 id expense &>>$LOGFILE
@@ -55,6 +55,7 @@ curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expen
 VALIDATE $? "Downloading the code"
 
 cd /app
+rm -rf /app/*
 unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "Extract the zip file"
 
