@@ -50,7 +50,7 @@ cd /usr/share/nginx/html &>>$LOGFILE
 unzip /tmp/frontend.zip
 VALIDATE $? "Extracting the code"
 
-cp /home/ex2-user/practice-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGFILE
+cp /home/ec2-user/practice-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGFILE
 VALIDATE $? "Coping Nginx"
 
 systemctl restart nginx &>>$LOGFILE
