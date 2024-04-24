@@ -7,16 +7,20 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0"
 
-if [ -d $SOURCE_DIRECTORY ]
+if [ -d SOURCE_DIRECTORY ]
 then 
-    echo "Source directory exists"
+   echo -e "$G Source directory exists $N"
 else
-    echo "Make sure Source directory exists"
-    exit 
-fi      
+    echo -e "$R Please make sure source directory exists $N"    
+    exit 1
+fi       
 
 FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
-echo "Delete the $FILES"
+while IFS= read -r line
+do 
+	echo "Delete the files: $line"
+	rm -rf $Line
+done <<< $FILES
 
 
