@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0"
 
-if[ -d SOURCE_DIRECTORY ]
+if [ -d $SOURCE_DIRECTORY ]
 then 
     echo "Source directory exists"
 else
