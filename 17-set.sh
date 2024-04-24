@@ -10,6 +10,7 @@ Function_name(){
 trap 'Function_name ${LINENO} "${BASH_COMMAND}"' ERR
 
 USERID=$(id -u)
+
 if [ $USERID -ne 0 ]
 then 
     echo "Please run with super user"
@@ -18,8 +19,9 @@ else
     echo "You're a super user"
 fi
 
-dnf install mysql-server -y &>>$LOGFILE
+dnf install mysql-server -y 
 #VALIDATE $? "Installation of Mysql-server is success"
 
-systemctl enable mysqld &>>$LOGFILE
+systemctl enable mysqld 
 #VALIDATE $? "Enabling mysql server"
+echo "Script is proceeding"
