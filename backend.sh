@@ -57,7 +57,7 @@ dnf install mysql -y &>>$LOGFILE
 mysql -h database.akshaydaws-78s.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 #VALIDATE $? "Schema Loading"
 
-systemctl rrestart backend &>>$LOGFILE
+systemctl restart backend &>>$LOGFILE
 echo "Task compeleted"
 #VALIDATE $? "Restarting Backend"
 
