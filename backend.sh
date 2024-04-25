@@ -4,7 +4,7 @@ source ./01-common.sh
 
 check_root()
 
-echo -e "Please provide backend password"
+echo "Please provide backend password"
 read -s my_sql_Password
 
 dnf module disable nodejs -y &>>$LOGFILE
