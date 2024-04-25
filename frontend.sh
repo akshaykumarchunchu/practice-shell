@@ -3,7 +3,7 @@
 
 source ./01-common.sh
 
-check_root()
+check_root
 
 echo "Please give frontend password"
 read -s mysql_root_password
