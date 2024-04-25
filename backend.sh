@@ -2,10 +2,10 @@
 
 source ./01-common.sh
 
-check_root()
+check_root
 
-echo "Please provide backend password"
-read -s my_sql_Password
+echo "Please enter DB Password"
+read -s mysql_root_password
 
 dnf module disable nodejs -y &>>$LOGFILE
 #VALIDATE $? "disabling default nodejs"
