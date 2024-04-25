@@ -58,6 +58,7 @@ mysql -h database.akshaydaws-78s.online -uroot -p${mysql_root_password} < /app/s
 #VALIDATE $? "Schema Loading"
 
 systemctl restart backend &>>$LOGFILE
+echo "Task compeleted"
 #VALIDATE $? "Restarting Backend"
 
 
