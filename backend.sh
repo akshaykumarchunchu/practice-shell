@@ -4,7 +4,7 @@ source ./01-common.sh
 
 check_root
 
-echo "Please enter DB Password"
+echo "Please enter backend Password"
 read -s mysql_root_password
 
 dnf module disable nodejs -y &>>$LOGFILE
@@ -57,7 +57,7 @@ dnf install mysql -y &>>$LOGFILE
 mysql -h database.akshaydaws-78s.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 #VALIDATE $? "Schema Loading"
 
-systemctl restart backend &>>$LOGFILE
+systemctl rrestart backend &>>$LOGFILE
 echo "Task compeleted"
 #VALIDATE $? "Restarting Backend"
 
