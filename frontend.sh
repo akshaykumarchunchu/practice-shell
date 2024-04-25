@@ -31,6 +31,7 @@ cp /home/ec2-user/practice-shell/expense.conf /etc/nginx/default.d/expense.conf 
 #VALIDATE $? "Coping Nginx"
 
 systemctl restart nginx &>>$LOGFILE
+echo "Front installtations si done"
 #VALIDATE $? "Restarting Nginx"
 
 
